@@ -14,7 +14,7 @@ import PermMediaOutlinedIcon from '@mui/icons-material/PhotoSizeSelectActual';
 import PublicIcon from '@mui/icons-material/Public';
 import SettingsEthernetIcon from '@mui/icons-material/SettingsEthernet';
 import SettingsInputComponentIcon from '@mui/icons-material/SettingsInputComponent';
-//import TimerIcon from '@mui/icons-material/Timer';
+// import TimerIcon from '@mui/icons-material/Timer';
 import SettingsIcon from '@mui/icons-material/Settings';
 import PhonelinkSetupIcon from '@mui/icons-material/PhonelinkSetup';
 
@@ -27,7 +27,7 @@ const categories = [
         icon: <PeopleIcon />,
         active: true,
       },
-      { id: 'Database', icon: <PublicIcon /> },
+    //   { id: 'Database', icon: <DnsRoundedIcon /> },
       { id: 'Storage', icon: <PermMediaOutlinedIcon /> },
       { id: 'Hosting', icon: <PublicIcon /> },
       { id: 'Functions', icon: <SettingsEthernetIcon /> },
@@ -41,7 +41,7 @@ const categories = [
     id: 'Quality',
     children: [
       { id: 'Analytics', icon: <SettingsIcon /> },
-      { id: 'Performance', icon: <SettingsIcon /> },
+    //   { id: 'Performance', icon: <TimerIcon /> },
       { id: 'Test Lab', icon: <PhonelinkSetupIcon /> },
     ],
   },
@@ -66,16 +66,16 @@ export default function Navigator(props) {
   const { ...other } = props;
 
   return (
-    <Drawer variant="permanent">
-      <List disablePadding >
-        <ListItem sx={{ fontSize: 22, color: '#fff', backgroundColor:'#101f33'}}>
-          CHARUSAT
+    <Drawer variant="permanent" {...other}>
+      <List disablePadding>
+        <ListItem sx={{ ...item, ...itemCategory, fontSize: 22, color: '#fff' }}>
+          Paperbase
         </ListItem>
-        <ListItem sx={{fontSize: 22, color: '#fff', backgroundColor:'#101f33'}}>
-          <ListItemIcon sx={{fontSize: 22, color: '#fff', backgroundColor:'#101f33'}}>
-            <HomeIcon sx={{ontSize: 22, color: '#fff', backgroundColor:'#101f33'}}/>
-          </ListItemIcon >
-          <ListItemText sx={{fontSize: 22, color: '#fff', backgroundColor:'#101f33'}}>Placement Portal</ListItemText>
+        <ListItem sx={{ ...item, ...itemCategory }}>
+          <ListItemIcon>
+            <HomeIcon />
+          </ListItemIcon>
+          <ListItemText>Project Overview</ListItemText>
         </ListItem>
         {categories.map(({ id, children }) => (
           <Box key={id} sx={{ bgcolor: '#101F33' }}>
@@ -91,7 +91,7 @@ export default function Navigator(props) {
               </ListItem>
             ))}
 
-            <Divider sx={{ mt: 3}} />
+            <Divider sx={{ mt: 2 }} />
           </Box>
         ))}
       </List>
