@@ -11,21 +11,21 @@ import Paperbase from './components/dashboard/Paperbase';
 import Navigator from './components/dashboard/Navigator';
 import Header from './components/dashboard/Header';
 import Content from './components/dashboard/Content';
-import {BrowserRouter as Router,Switch,Route,Link} from "react-router-dom";
+import {BrowserRouter,Routes,Route} from "react-router-dom";
+import Profile from './components/profile/Profile';
 function App() {
   return (
-    <div className="App">
-        {/* <Login/> */}
+    <Routes>
+         {/* <Login/>   */}
         {/* <Navigator/>
         <Header/>  */}
-      {/* <Signup/> */}
+      {/* <Signup/>  */}
       {/* <Landingpage/> */}
-      <Paperbase/>
-      {/* <Navigator/>
-      <Header/> 
-      <Content/> */}
-      
-    </div>
+      <Route  path="/" element={<Paperbase/>}/> 
+        <Route path="login" element={<Login/>}/>
+      {/* </Route> */}
+    </Routes>
+
   );
 };
 

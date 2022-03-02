@@ -75,7 +75,7 @@ const Signin=()=> {
             
             </Avatar>
             <Typography component="h1" variant="h5">
-              Sign in
+              Sign Up
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
               <TextField
@@ -108,7 +108,7 @@ const Signin=()=> {
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Sign Up
               </Button>
               <Grid container>
                 <Grid item xs>
