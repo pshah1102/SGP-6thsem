@@ -6,7 +6,8 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import HelpIcon from '@mui/icons-material/Help';
 import IconButton from '@mui/material/IconButton';
-import Link from '@mui/material/Link';
+import Link_m from '@mui/material/Link';
+import { Outlet, Link } from "react-router-dom";
 import MenuIcon from '@mui/icons-material/Menu';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import Tab from '@mui/material/Tab';
@@ -14,7 +15,7 @@ import Tabs from '@mui/material/Tabs';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
-
+import {BrowserRouter as Router,Switch,Route} from "react-router-dom";
 const lightColor = 'rgba(255, 255, 255, 0.7)';
 
 function Header(props) {
@@ -37,7 +38,7 @@ function Header(props) {
             </Grid>
             <Grid item xs />
             <Grid item>
-              <Link
+              <Link_m
                 href="/"
                 variant="body2"
                 sx={{
@@ -51,7 +52,7 @@ function Header(props) {
                 target="_blank"
               >
                 Go to docs
-              </Link>
+              </Link_m>
             </Grid>
             <Grid item>
               <Tooltip title="Alerts • No alerts">
@@ -62,7 +63,7 @@ function Header(props) {
             </Grid>
             <Grid item>
               <IconButton color="inherit" sx={{ p: 0.5 }}>
-                <Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" />
+                <Link to="/login"><Avatar src="/static/images/avatar/1.jpg" alt="My Avatar" /></Link>      
               </IconButton>
             </Grid>
           </Grid>
@@ -79,7 +80,7 @@ function Header(props) {
           <Grid container alignItems="center" spacing={1}>
             <Grid item xs>
               <Typography color="inherit" variant="h5" component="h1">
-                Authentication
+                Student Dashboard
               </Typography>
             </Grid>
             <Grid item>
